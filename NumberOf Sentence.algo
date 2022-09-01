@@ -1,0 +1,36 @@
+ALGORITHM NumberOfSentence
+VAR
+   ch : chaine de caractere
+   count , i : entier
+BEGIN
+   lire (ch);
+   pour i = 0 ;ch[i] =!'\0';i++
+   {
+        if (ch[i] == ' ' && ch[i+1] != ' ')
+            count++; 
+        endif   
+    }
+    endpour
+    ecrire("Number of words in given string are: %d\n", count + 1);
+}
+END
+/******************************/
+ALGORITHM NumberOfVowels
+VAR
+   s : chaine de caractere
+   count , i ,c: entier
+   c = 0;
+BEGIN
+ lire("Input a string\n");
+ ecrire(ch);
+
+  while (s[ch] != '\0') {
+    if (s[c] == 'a' || s[c] == 'A' || s[c] == 'e' || s[c] == 'E' || s[c] == 'i' || s[c] == 'I' || s[c] =='o' || s[c]=='O' || s[c] == 'u' || s[c] == 'U')
+      count++;
+    c++;
+  }
+
+  printf("Number of vowels in the string: %d", count);
+
+}
+END

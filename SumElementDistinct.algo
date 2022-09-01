@@ -1,0 +1,22 @@
+ALGORITHM SumElementDistinct
+VAR
+    var n,i,j :entier
+   T1:tableau[n] entier
+   T2:tableau[n] entier
+   
+BEGIN
+  var sum =0;
+  pour i=1 a n faire    
+    pour j= 1 a n faire
+    if T1[i]==T2[J]
+    {
+        BREAK;
+    }
+    else {
+        sum = T1[i]+T2[J];
+    }
+    Endif;
+    FinPour;
+FinPour
+
+END
