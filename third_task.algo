@@ -1,0 +1,21 @@
+FUNCTION calcPs(v1:=ARRAY_OF_INTEGER,v2:=ARRAY_OF_INTEGER) : INTEGER
+VAR
+    calc:=INTEGER
+BEGIN
+    calc = v1[0]*v2[0]+v1[1]*v2[1]
+    RETURN calc
+END
+ALGORITHM third_task
+VAR
+    listVectors := ARRAY_OF_INTEGER[4] = [[1,2],[3,2],[5,0],[0,3]]
+    ps:=INTEGER
+BEGIN
+    FOR i FROM 0 TO listVectors.length-1  DO
+        FOR j FROM i+1 TO listVectors.length-1  DO
+            ps = calcPs(listVectors[i],listVectors[j])
+            IF (ps=0) THEN
+                write(listVectors[i],listVectors[j], ' sont orthogonaux')
+            END_IF
+        END_FOR
+    END_FOR
+END
