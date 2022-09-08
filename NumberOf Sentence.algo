@@ -15,22 +15,24 @@ BEGIN
 }
 END
 /******************************/
-ALGORITHM NumberOfVowels
+ALGORITHM first_task
 VAR
-   s : chaine de caractere
-   count , i ,c: entier
-   c = 0;
+    paragraph := STRING[1000]
+    c := CHAR
+    countWords, countVowels := INTEGER
 BEGIN
- lire("Input a string\n");
- ecrire(ch);
-
-  while (s[ch] != '\0') {
-    if (s[c] == 'a' || s[c] == 'A' || s[c] == 'e' || s[c] == 'E' || s[c] == 'i' || s[c] == 'I' || s[c] =='o' || s[c]=='O' || s[c] == 'u' || s[c] == 'U')
-      count++;
-    c++;
-  }
-
-  printf("Number of vowels in the string: %d", count);
-
-}
+    REPEAT
+        read(c)
+        paragraph = paragraph + c
+        IF (c=' ' || c='.') THEN
+            countWords = countWords + 1
+        END_IF
+        IF (c in ['a','e','y','u','i','o','A','E','Y','U','I','O']) THEN
+            countVowels = countVowels+1
+        END_IF
+    UNTIL (c='.')
+    write('your paragraph is :',paragraph)
+    write('it containes '+countWords + ' words') //it containes 5 words
+    write('it containes '+countVowels + ' vowels') //it containes 2 vowels
+END
 END
